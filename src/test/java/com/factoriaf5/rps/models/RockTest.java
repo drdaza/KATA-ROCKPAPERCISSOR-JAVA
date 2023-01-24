@@ -7,7 +7,8 @@ import org.junit.Test;
 public class RockTest {
     
     @Test
-    public void justASimpleTest() {
-        assertTrue(true);
+    public void is_Rock() {
+        Figure rocky = new Rock();
+        assertTrue(rocky instanceof Rock);
     }
 }
