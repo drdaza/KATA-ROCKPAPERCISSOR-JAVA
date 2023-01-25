@@ -9,7 +9,7 @@ public class PlayerTest {
     Player playerOne;
 
     public PlayerTest() {
-        this.playerOne = new Player();
+        this.playerOne = new Player("Player1");
     }
 
     @Test

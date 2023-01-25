@@ -22,13 +22,19 @@ public class Game {
         return Players;
     }
 
-    public Player checkWinner(Player FirstPlayer, Player SecondPLayer){
-        if (FirstPlayer.getSelection() instanceof Rock && SecondPLayer.getSelection() instanceof Scissors)
+    public Player checkWinner(Player FirstPlayer, Player SecondPlayer){
+        if (FirstPlayer.getSelection() instanceof Rock && SecondPlayer.getSelection() instanceof Scissors)
         return FirstPlayer;
-        if(FirstPlayer.getSelection() instanceof Rock && SecondPLayer.getSelection() instanceof Paper)
-        return SecondPLayer;
-        if(FirstPlayer.getSelection() instanceof Scissors && SecondPLayer.getSelection() instanceof Paper)
+        if(FirstPlayer.getSelection() instanceof Rock && SecondPlayer.getSelection() instanceof Paper)
+        return SecondPlayer;
+        if(FirstPlayer.getSelection() instanceof Scissors && SecondPlayer.getSelection() instanceof Paper)
         return FirstPlayer;
+        if (FirstPlayer.getSelection() instanceof Scissors && SecondPlayer.getSelection() instanceof Rock)
+        return SecondPlayer;
+        if(FirstPlayer.getSelection() instanceof Paper && SecondPlayer.getSelection() instanceof Rock)
+        return FirstPlayer;
+        if(FirstPlayer.getSelection() instanceof Paper && SecondPlayer.getSelection() instanceof Scissors)
+        return SecondPlayer;
         return null;
     }
 }
