@@ -37,4 +37,11 @@ public class Game {
         return SecondPlayer;
         return null;
     }
+    public String initGame() {
+
+        Player winenr = checkWinner(Players.get(0), Players.get(1));
+        String result = String.format("the winner is: %s", winenr.getNickName());
+
+        return result;
+    }
 }

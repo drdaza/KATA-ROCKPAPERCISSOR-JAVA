@@ -99,4 +99,24 @@ public class GameTest {
         assertEquals("Player1", winner.getNickName());
         assertTrue(selectionPlayer1 instanceof Rock);
     }
+    @Test
+    public void test_the_winner_is_player_1(){
+        game.setPlayer(player1);
+        game.setPlayer(player2);
+
+        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Rock");
+        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Scissors");
+
+        assertEquals("the winner is: Player1", game.initGame());
+    }
+    @Test
+    public void test_the_winner_is_player_2(){
+        game.setPlayer(player1);
+        game.setPlayer(player2);
+
+        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Scissors");
+        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Rock");
+
+        assertEquals("the winner is: Player2", game.initGame());
+    }
 }
