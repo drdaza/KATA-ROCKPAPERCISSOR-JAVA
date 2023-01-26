@@ -38,9 +38,12 @@ public class Game {
         return null;
     }
     public String initGame() {
-
-        Player winenr = checkWinner(Players.get(0), Players.get(1));
-        String result = String.format("the winner is: %s", winenr.getNickName());
+        Player loser = new Player(null);
+        Player winner = checkWinner(Players.get(0), Players.get(1));
+        for (Player player : Players) {
+            if(player.getNickName() != winner.getNickName()) loser = player;
+        } 
+        String result = String.format("the winner is: %s %s beats %s", winner.getNickName(),winner.getSelection(), loser.getSelection());
 
         return result;
     }

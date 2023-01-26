@@ -17,21 +17,17 @@ public class Player {
     public void setSelection(Figure selection) {
         this.selection = selection;
     }
+    
+    public void choose(String selection){
+        if(selection == "Rock") setSelection(new Rock());
+            
+        if(selection == "Paper") setSelection(new Paper());
+            
+        if(selection == "Scissors") setSelection(new Scissors());
+            
+        if(selection == "Lizzard") setSelection(new Lizzard());
 
-    public Figure choose(String selection){
-        if(selection == "Rock") {
-            setSelection(new Rock());
-            return new Rock();
-        }
-        if(selection == "Paper"){ 
-            setSelection(new Paper());
-            return new Paper();
-        }
-        if(selection == "Scissors"){ 
-            setSelection(new Scissors());
-            return new Scissors();
-        }
-        return null;
+        if(selection == "Spock") setSelection(new Spock());
     }
 
     
