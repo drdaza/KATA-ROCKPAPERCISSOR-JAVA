@@ -106,7 +106,7 @@ public class GameTest {
         game.getPlayer().get(0).choose("Rock");
         game.getPlayer().get(1).choose("Scissors");
 
-        assertEquals("the winner is: Player1", game.initGame());
+        assertEquals("the winner is: Player1 Rock beats Scissors", game.initGame());
     }
     @Test
     public void test_the_winner_is_player_2(){
@@ -116,6 +116,26 @@ public class GameTest {
         game.getPlayer().get(0).choose("Scissors");
         game.getPlayer().get(1).choose("Rock");
 
-        assertEquals("the winner is: Player2", game.initGame());
+        assertEquals("the winner is: Player2 Rock beats Scissors", game.initGame());
+    }
+    @Test
+    public void test_the_winner_is_player_1_lizzard(){
+        game.setPlayer(player1);
+        game.setPlayer(player2);
+
+        game.getPlayer().get(0).choose("Scissors");
+        game.getPlayer().get(1).choose("Lizzard");
+
+        assertEquals("the winner is: Player1 Scissors beats Lizzard", game.initGame());
+    }
+    @Test
+    public void test_the_winner_is_player_1_Spock(){
+        game.setPlayer(player1);
+        game.setPlayer(player2);
+
+        game.getPlayer().get(0).choose("Spock");
+        game.getPlayer().get(1).choose("Lizzard");
+
+        assertEquals("the winner is: Player2 Lizzard beats Spock", game.initGame());
     }
 }

@@ -1,5 +1,7 @@
 package com.factoriaf5.rps.models;
 
 public class Paper extends Figure {
-    
+    public String toString() {
+        return "Paper";
+    }
 }
