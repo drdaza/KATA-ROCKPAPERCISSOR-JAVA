@@ -4,11 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.factoriaf5.rps.models.Figure;
-import com.factoriaf5.rps.models.Paper;
-import com.factoriaf5.rps.models.Player;
-import com.factoriaf5.rps.models.Rock;
-import com.factoriaf5.rps.models.Scissors;
+
+import com.factoriaf5.rps.models.Player.Player;
 
 public class GameTest {
     private Player player1;
@@ -21,102 +18,82 @@ public class GameTest {
         this.game = new Game();
     }
     
-    /* @Test
+     @Test
     public void second_player2_choose_paper_player1_choose_rock() {
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Rock");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Paper");
+        player1.choose("Rock");
+        player2.choose("Paper");
 
-        Player winner = game.checkWinner(game.getPlayer().get(0),game.getPlayer().get(1));
+    
         
-        assertEquals("Player2", winner.getNickName());
-        assertTrue(selectionPlayer2 instanceof Paper);
+        assertEquals("the winner is: Player2 Paper beats Rock", game.initGame());
+
     }
     @Test
     public void second_player2_choose_scissors_player1_choose_paper() {
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Paper");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Scissors");
-
-        Player winner = game.checkWinner(game.getPlayer().get(0),game.getPlayer().get(1));
+        player1.choose("Paper");
+        player2.choose("Scissors");
         
-        assertEquals("Player2", winner.getNickName());
-        assertTrue(selectionPlayer2 instanceof Scissors);
+        assertEquals("the winner is: Player2 Scissors beats Paper", game.initGame());
     }
+    
     @Test
     public void second_player2_choose_rock_player1_choose_scissors() {
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Scissors");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Rock");
-
-        Player winner = game.checkWinner(game.getPlayer().get(0),game.getPlayer().get(1));
+        player1.choose("Scissors");
+        player2.choose("Rock");
         
-        assertEquals("Player2", winner.getNickName());
-        assertTrue(selectionPlayer2 instanceof Rock);
+        assertEquals("the winner is: Player2 Rock beats Scissors", game.initGame());
     }
+    
     @Test
     public void second_player2_choose_rock_player1_choose_paper() {
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Paper");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Rock");
-
-        Player winner = game.checkWinner(game.getPlayer().get(0),game.getPlayer().get(1));
+        player1.choose("Paper");
+        player2.choose("Rock");
         
-        assertEquals("Player1", winner.getNickName());
-        assertTrue(selectionPlayer1 instanceof Paper);
+        assertEquals("the winner is: Player1 Paper beats Rock", game.initGame());
     }
+    
     @Test
     public void second_player2_choose_paper_player1_choose_scissors() {
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Scissors");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Paper");
-
-        Player winner = game.checkWinner(game.getPlayer().get(0),game.getPlayer().get(1));
+        player1.choose("Scissors");
+        player2.choose("Paper");
         
-        assertEquals("Player1", winner.getNickName());
-        assertTrue(selectionPlayer1 instanceof Scissors);
+        assertEquals("the winner is: Player1 Scissors beats Paper", game.initGame());
     }
+    
     @Test
     public void second_player2_choose_scissors_player1_choose_rock() {
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Rock");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Scissors");
-
-        Player winner = game.checkWinner(game.getPlayer().get(0),game.getPlayer().get(1));
+        player1.choose("Rock");
+        player2.choose("Scissors");
         
-        assertEquals("Player1", winner.getNickName());
-        assertTrue(selectionPlayer1 instanceof Rock);
+        assertEquals("the winner is: Player1 Rock beats Scissors", game.initGame());
     }
     @Test
-    public void test_the_winner_is_player_1(){
+    public void test_not_have_a_winner(){
         game.setPlayer(player1);
         game.setPlayer(player2);
 
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Rock");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Scissors");
-
-        assertEquals("the winner is: Player1", game.initGame());
+        player1.choose("Rock");
+        player2.choose("Rock");
+        
+        assertEquals("we have not a winner", game.initGame());
     }
-    @Test
-    public void test_the_winner_is_player_2(){
-        game.setPlayer(player1);
-        game.setPlayer(player2);
-
-        Figure selectionPlayer1 = game.getPlayer().get(0).choose("Scissors");
-        Figure selectionPlayer2 = game.getPlayer().get(1).choose("Rock");
-
-        assertEquals("the winner is: Player2", game.initGame());
-    } */
+    
 }

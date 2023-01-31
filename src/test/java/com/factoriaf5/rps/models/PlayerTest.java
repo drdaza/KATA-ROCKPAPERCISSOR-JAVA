@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.factoriaf5.rps.models.Player.Player;
+
 public class PlayerTest {
     Player playerOne;
 

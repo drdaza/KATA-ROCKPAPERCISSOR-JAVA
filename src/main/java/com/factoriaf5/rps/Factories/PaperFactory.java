@@ -7,7 +7,6 @@ public class PaperFactory implements InterfaceFactory{
 
     @Override
     public Figure createFigure() {
-
         return new Paper();
     }
     

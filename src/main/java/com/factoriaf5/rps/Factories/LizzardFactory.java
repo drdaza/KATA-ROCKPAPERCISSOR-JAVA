@@ -6,9 +6,8 @@ import com.factoriaf5.rps.models.Lizzard;
 public class LizzardFactory implements InterfaceFactory{
 
     @Override
-    public Figure createFigure() {
-        
-        return new Lizzard();
+    public Figure createFigure() { 
+        return new Lizzard(); 
     }
     
 }

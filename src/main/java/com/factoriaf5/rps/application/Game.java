@@ -2,8 +2,7 @@ package com.factoriaf5.rps.application;
 
 import java.util.ArrayList;
 
-
-import com.factoriaf5.rps.models.Player;
+import com.factoriaf5.rps.models.Player.Player;
 
 
 public class Game {
@@ -25,9 +24,14 @@ public class Game {
 
     public String initGame() {
 
-        Player winenr = rules.checkWinner(Players.get(0), Players.get(1));
-        String result = String.format("the winner is: %s", winenr.getNickName());
+        Player winner = rules.checkWinner(Players.get(0), Players.get(1));
+        if(winner != null){
+        Player loser = rules.checkLoser(Players.get(0), Players.get(1));
+
+        String result = String.format("the winner is: %s %s beats %s", winner.getNickName(), winner.getSelection().toString(),  loser.getSelection().toString());
 
         return result;
+        }
+        return "we have not a winner";
     }
 }

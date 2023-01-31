@@ -2,10 +2,10 @@ package com.factoriaf5.rps.application;
 
 import com.factoriaf5.rps.models.Lizzard;
 import com.factoriaf5.rps.models.Paper;
-import com.factoriaf5.rps.models.Player;
 import com.factoriaf5.rps.models.Rock;
 import com.factoriaf5.rps.models.Scissors;
 import com.factoriaf5.rps.models.Spock;
+import com.factoriaf5.rps.models.Player.Player;
 
 public class SheldonRules implements Rules{
 
@@ -55,6 +55,16 @@ public class SheldonRules implements Rules{
         return FirstPlayer;
         if(FirstPlayer.getSelection() instanceof Lizzard && SecondPlayer.getSelection() instanceof Rock)
         return SecondPlayer;
+
+        if(FirstPlayer.getSelection().equals(SecondPlayer.getSelection()));
+        return null;
+    }
+
+    @Override
+    public Player checkLoser(Player FirstPlayer, Player SecondPlayer) {
+        String winner = checkWinner(FirstPlayer, SecondPlayer).getNickName();
+        if(winner == FirstPlayer.getNickName()) return FirstPlayer;
+        if(winner == SecondPlayer.getNickName()) return SecondPlayer;
         return null;
     }
     
