@@ -3,6 +3,7 @@ package com.factoriaf5.rps.models;
 public class Player {
     private Figure selection;
     private String NickName;
+    private ObjectCreator objectCreator;
 
     public Player(String nickName){
         NickName = nickName;
@@ -18,20 +19,8 @@ public class Player {
         this.selection = selection;
     }
 
-    public Figure choose(String selection){
-        if(selection == "Rock") {
-            setSelection(new Rock());
-            return new Rock();
-        }
-        if(selection == "Paper"){ 
-            setSelection(new Paper());
-            return new Paper();
-        }
-        if(selection == "Scissors"){ 
-            setSelection(new Scissors());
-            return new Scissors();
-        }
-        return null;
+    public void choose(String selection){
+       setSelection(objectCreator.create(selection));
     }
 
     

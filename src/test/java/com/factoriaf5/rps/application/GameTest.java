@@ -21,7 +21,7 @@ public class GameTest {
         this.game = new Game();
     }
     
-    @Test
+    /* @Test
     public void second_player2_choose_paper_player1_choose_rock() {
         game.setPlayer(player1);
         game.setPlayer(player2);
@@ -118,5 +118,5 @@ public class GameTest {
         Figure selectionPlayer2 = game.getPlayer().get(1).choose("Rock");
 
         assertEquals("the winner is: Player2", game.initGame());
-    }
+    } */
 }

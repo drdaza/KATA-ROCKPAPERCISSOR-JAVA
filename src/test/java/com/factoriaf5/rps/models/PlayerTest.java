@@ -14,22 +14,22 @@ public class PlayerTest {
 
     @Test
     public void Player_choose_Rock(){
-        Figure rock = playerOne.choose("Rock");
-        assertTrue(rock instanceof Rock);
+        playerOne.choose("Rock");
+        assertTrue(playerOne.getSelection() instanceof Rock);
     }
     @Test
     public void Player_choose_Paper(){
-        Figure paper = playerOne.choose("Paper");
-        assertTrue(paper instanceof Paper);
+        playerOne.choose("Paper");
+        assertTrue(playerOne.getSelection() instanceof Paper);
     }
     @Test
     public void Player_choose_Scissors(){
-        Figure scissors = playerOne.choose("Scissors");
-        assertTrue(scissors instanceof Scissors);
+        playerOne.choose("Scissors");
+        assertTrue(playerOne.getSelection() instanceof Scissors);
     }
     @Test
     public void Player_choose_diferent_option(){
-        Figure rock = playerOne.choose("pepe");
-        assertEquals(null, rock);
+       playerOne.choose("pepe");
+        assertEquals(null, playerOne.getSelection());
     }
 }
